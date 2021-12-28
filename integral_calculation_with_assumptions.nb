@@ -1,0 +1,95 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2453,         87]
+NotebookOptionsPosition[      2065,         68]
+NotebookOutlinePosition[      2414,         83]
+CellTagsIndexPosition[      2371,         80]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Calculation of integral", "Section",
+ CellChangeTimes->{{3.818182991873869*^9, 3.818182998168869*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", "/", "Pi"}], "*", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{"2", "*", 
+       RowBox[{"a", "/", "G"}]}], "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"F", "/", "G"}], ")"}], "*", 
+       RowBox[{"x", "^", "2"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"2", "*", 
+       RowBox[{"a", "/", "F"}]}], "]"}]}], "}"}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"a", ">", "0"}], ",", 
+      RowBox[{"F", ">", "0"}], ",", 
+      RowBox[{"G", ">", "0"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.817982758740765*^9, 3.817982763895833*^9}, {
+   3.8179827975325003`*^9, 3.817982900608573*^9}, 3.817982966982187*^9, {
+   3.8179830755968475`*^9, 3.817983081586241*^9}, {3.81798327842162*^9, 
+   3.8179833464791174`*^9}, {3.817983497784567*^9, 3.8179835179919486`*^9}, {
+   3.817983558401931*^9, 3.817983568459502*^9}}],
+
+Cell[BoxData[
+ FractionBox["a", 
+  SqrtBox[
+   RowBox[{"F", " ", "G"}]]]], "Output",
+ CellChangeTimes->{
+  3.8179828915122385`*^9, 3.817982957876952*^9, 3.8179830211983976`*^9, {
+   3.817983312809202*^9, 3.8179833295904703`*^9}, 3.8179833787242084`*^9, 
+   3.817983534969472*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{759, 509},
+WindowMargins->{{229, Automatic}, {-12, Automatic}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 108, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[713, 27, 1042, 28, 50, "Input"],
+Cell[1758, 57, 279, 7, 49, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,119 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3430,        111]
+NotebookOptionsPosition[      3006,         91]
+NotebookOutlinePosition[      3354,        106]
+CellTagsIndexPosition[      3311,        103]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Calculation of the probability of a K-streak", "Section",
+ CellChangeTimes->{{3.81818327995015*^9, 3.8181832917683163`*^9}, {
+  3.8181833562564836`*^9, 3.8181833650820007`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p", "=", "0.5"}], ";", 
+  RowBox[{"q", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"S", "[", 
+   RowBox[{"N_", ",", "K_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "^", "K"}], " ", "*", " ", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Binomial", "[", 
+        RowBox[{
+         RowBox[{"N", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"T", "+", "1"}], ")"}], "K"}]}], ",", " ", "T"}], "]"}], 
+       "*", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "q"}], "*", 
+          RowBox[{"p", "^", "K"}]}], ")"}], "^", "T"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"T", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]}], "-", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"N", "-", 
+         RowBox[{"T", "*", "K"}]}], ",", " ", "T"}], "]"}], "*", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "q"}], "*", 
+         RowBox[{"p", "^", "K"}]}], ")"}], "^", "T"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"T", ",", "1", ",", "Infinity"}], "}"}]}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.817722875750573*^9, 3.8177228997467213`*^9}, {
+  3.817722933441366*^9, 3.8177229337625456`*^9}, {3.817722984372461*^9, 
+  3.8177231870701036`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"S", "[", 
+  RowBox[{"200", ",", "8"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8177231807045507`*^9, 3.817723257584835*^9}, 
+   3.8177233023589306`*^9, {3.817723360974454*^9, 3.8177233749479556`*^9}, {
+   3.817723546989171*^9, 3.8177235663155155`*^9}, 3.8177236873316164`*^9, 
+   3.81772372393091*^9, {3.8177237553734655`*^9, 3.817723846363145*^9}, {
+   3.817724100795204*^9, 3.817724105861513*^9}}],
+
+Cell[BoxData["0.3196979137628965`"], "Output",
+ CellChangeTimes->{{3.8177233619401674`*^9, 3.8177233753926306`*^9}, {
+   3.8177235479831133`*^9, 3.817723570647787*^9}, 3.8177236889399047`*^9, 
+   3.8177237258852835`*^9, {3.8177237568305807`*^9, 3.817723814157518*^9}, {
+   3.8177238442465806`*^9, 3.8177238472115736`*^9}, {3.81772410146041*^9, 
+   3.8177241064342165`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 646},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 183, 2, 70, "Section"],
+Cell[766, 26, 1389, 43, 50, "Input"],
+Cell[CellGroupData[{
+Cell[2180, 73, 422, 7, 30, "Input"],
+Cell[2605, 82, 373, 5, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
