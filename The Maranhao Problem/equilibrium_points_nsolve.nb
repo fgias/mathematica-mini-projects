@@ -1,0 +1,272 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10080,        264]
+NotebookOptionsPosition[      9346,        233]
+NotebookOutlinePosition[      9694,        248]
+CellTagsIndexPosition[      9651,        245]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Equilibrium points of the Maranhao problem with NSolve
+F. I. Giasemis\
+\>", "Section",
+ CellChangeTimes->{{3.816591222414211*^9, 3.8165912458201375`*^9}, {
+  3.8165912955680165`*^9, 3.8165913382888193`*^9}, {3.8165914606973667`*^9, 
+  3.816591474578641*^9}, {3.816593533918784*^9, 3.816593538448969*^9}, {
+  3.8167759204455705`*^9, 3.8167759217573366`*^9}, {3.8177516316888113`*^9, 
+  3.81775164103749*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["The Maranhao problem", "Subsection",
+ CellChangeTimes->{{3.816591262209571*^9, 3.816591267695138*^9}, 
+   3.816591465825535*^9, {3.816715829273697*^9, 3.8167158315104704`*^9}, {
+   3.8167752223219547`*^9, 3.8167752236736994`*^9}, 3.8167759385854197`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"U", "[", 
+   RowBox[{"x", ",", "y"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.816334080928753*^9, 3.8163341433375297`*^9}, {
+  3.8163341742275724`*^9, 3.816334195920176*^9}, {3.8163342273160763`*^9, 
+  3.816334323091606*^9}, {3.816334400979493*^9, 3.81633440596611*^9}, {
+  3.8163344429345646`*^9, 3.816334661020293*^9}, {3.816334792718565*^9, 
+  3.816334796158011*^9}, {3.816717479992083*^9, 3.8167174816224823`*^9}, {
+  3.816777794754582*^9, 3.816777799014222*^9}, {3.8185105969881854`*^9, 
+  3.8185105993593006`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The solution", "Subsection",
+ CellChangeTimes->{{3.81659127217824*^9, 3.816591274756163*^9}, {
+   3.816591542962256*^9, 3.8165915467514305`*^9}, 3.816775939694104*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"soln", "=", 
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"D", "[", 
+          RowBox[{
+           RowBox[{"U", "[", 
+            RowBox[{"x", ",", "y"}], "]"}], ",", "x"}], "]"}], "]"}], 
+        "\[Equal]", "0"}], ",", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"D", "[", 
+          RowBox[{
+           RowBox[{"U", "[", 
+            RowBox[{"x", ",", "y"}], "]"}], ",", "y"}], "]"}], "]"}], 
+        "\[Equal]", "0"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], ",", " ", "Reals"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8165213620666847`*^9, 3.8165213635037208`*^9}, 
+   3.816521398628076*^9, {3.816609465563997*^9, 3.8166094791596284`*^9}, {
+   3.8166097544561725`*^9, 3.816609762243307*^9}, {3.816609890577119*^9, 
+   3.816609892185816*^9}, {3.816610351222282*^9, 3.8166103675386844`*^9}, {
+   3.8166106997726293`*^9, 3.8166107040342*^9}, {3.8166107485208845`*^9, 
+   3.8166107501914263`*^9}, {3.816610836678686*^9, 3.8166108523278613`*^9}, {
+   3.816611101059389*^9, 3.816611103255515*^9}, {3.816777803199401*^9, 
+   3.816777804424157*^9}, {3.8167778487956915`*^9, 3.816777850739532*^9}, {
+   3.8195440155768795`*^9, 3.819544029337905*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"listpointsnsolve", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "<", 
+     RowBox[{
+      RowBox[{"Length", "[", "soln", "]"}], "+", "1"}]}], ",", 
+    RowBox[{"i", "+=", "1"}], ",", 
+    RowBox[{"AppendTo", "[", 
+     RowBox[{"listpointsnsolve", ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], "/.", 
+       RowBox[{"soln", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}]}], "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"listpointsnsolve", "=", 
+   RowBox[{"DeleteDuplicates", "[", 
+    RowBox[{"Round", "[", 
+     RowBox[{"listpointsnsolve", ",", "0.000000001"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"listpointsnsolve", "//", 
+  "TableForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.8166098343896046`*^9, 3.8166098404744563`*^9}, {
+   3.8166103706726537`*^9, 3.8166103723281927`*^9}, {3.8166104200495157`*^9, 
+   3.8166104255727463`*^9}, {3.8166108556011314`*^9, 
+   3.8166112880926237`*^9}, {3.816611393765215*^9, 3.8166115075842075`*^9}, {
+   3.816715429765727*^9, 3.81671543064923*^9}, {3.816715671340515*^9, 
+   3.816715685518512*^9}, {3.816715903480467*^9, 3.816715947191369*^9}, {
+   3.8167173346417513`*^9, 3.816717342825283*^9}, {3.816775280891143*^9, 
+   3.816775283328283*^9}, {3.8167761117796116`*^9, 3.8167761188591022`*^9}, {
+   3.8167761646084795`*^9, 3.8167761683980045`*^9}, 3.8185105808306584`*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0.804314434`", "0.`"},
+    {
+     RowBox[{"-", "0.804314434`"}], "0.`"},
+    {"0.283691526`", "0.`"},
+    {
+     RowBox[{"-", "0.283691526`"}], "0.`"},
+    {"0.`", 
+     RowBox[{"-", "0.536752813`"}]},
+    {"0.`", "0.536752813`"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.8166109014333696`*^9, 3.816610949486842*^9}, {
+   3.816610996027364*^9, 3.816611028775487*^9}, {3.8166111875021467`*^9, 
+   3.8166112348636384`*^9}, {3.816611300655034*^9, 3.8166113294736605`*^9}, 
+   3.8166113721699734`*^9, 3.8166114338822846`*^9, {3.8166114735292416`*^9, 
+   3.816611525595982*^9}, 3.8167154322157426`*^9, 3.8167154903152404`*^9, {
+   3.816715680822532*^9, 3.816715686093011*^9}, 3.816715948481923*^9, {
+   3.8167173260259547`*^9, 3.81671734399102*^9}, 3.8167752539075994`*^9, 
+   3.816775284999093*^9, 3.816775823584157*^9, 3.816776059361687*^9, {
+   3.816776114565627*^9, 3.8167761206690283`*^9}, 3.816776169208797*^9, 
+   3.816776919839263*^9, {3.8167778817576385`*^9, 3.81677788847641*^9}, 
+   3.8167780141376057`*^9, 3.816939681591797*^9, 3.8169398890279455`*^9, 
+   3.816940052728623*^9, 3.8177483743517847`*^9, 3.8177487939317136`*^9, 
+   3.8177516763299165`*^9, 3.817814166953077*^9, 3.8178177821771965`*^9, 
+   3.8185104471412487`*^9, 3.818510532656316*^9, {3.8185105775266247`*^9, 
+   3.818510582772834*^9}, 3.8195434455752096`*^9, 3.8195434986086674`*^9, {
+   3.819543959014966*^9, 3.8195439678343344`*^9}, 3.8195440321950636`*^9, 
+   3.8195440764176044`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"listpointsnsolve", ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"PointSize", "[", "Large", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8167769255592127`*^9, 3.816776932363266*^9}, {
+  3.816776965321934*^9, 3.8167769658425417`*^9}, {3.816777020909931*^9, 
+  3.816777090981928*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Large], 
+     AbsoluteThickness[1.6], 
+     PointBox[{{0.804314434, 0.}, {-0.804314434, 0.}, {0.283691526, 
+      0.}, {-0.283691526, 0.}, {0., -0.536752813}, {0., 
+      0.536752813}}]}, {}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{-0.804314434, 0.804314434}, {-0.536752813, 0.536752813}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.816777034467245*^9, 3.81677709156735*^9}, 
+   3.8167778915172787`*^9, 3.8167780142792387`*^9, 3.8169396817434335`*^9, 
+   3.816939889100746*^9, 3.816940052799389*^9, 3.8177483745154014`*^9, 
+   3.81774879400982*^9, 3.817751676481456*^9, 3.8178141672931356`*^9, 
+   3.8178177823342505`*^9, 3.8185104472918854`*^9, 3.818510532722124*^9, 
+   3.8195434457238207`*^9, 3.8195434986993837`*^9, {3.8195439591715884`*^9, 
+   3.8195439679141216`*^9}, 3.8195440322828608`*^9, 3.8195440764814267`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{750, 517},
+WindowMargins->{{248, Automatic}, {Automatic, 56}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 417, 8, 111, "Section"],
+Cell[CellGroupData[{
+Cell[1022, 34, 260, 3, 49, "Subsection"],
+Cell[1285, 39, 561, 10, 30, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1883, 54, 173, 2, 49, "Subsection"],
+Cell[2059, 58, 1350, 32, 30, "Input"],
+Cell[CellGroupData[{
+Cell[3434, 94, 1565, 36, 107, "Input"],
+Cell[5002, 132, 1951, 40, 128, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6990, 177, 347, 7, 30, "Input"],
+Cell[7340, 186, 1966, 42, 271, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
